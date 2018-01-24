@@ -1,0 +1,30 @@
+1.	Capture BAT - https://www.honeynet.org/node/315 
+2.	SysInternals - https://technet.microsoft.com/en-us/sysinternals/bb842062.aspx 
+3.	MAP Pack - http://sandsprite.com/CodeStuff/map_setup.exe
+4.	RegShot - http://sourceforge.net/projects/regshot/ 
+5.	010 (or any other Hex Editor like HxD) - http://www.sweetscape.com/010editor/ 
+6.	PEiD - http://woodmann.com/BobSoft/Files/Other/PEiD-0.95-20081103.zip 
+7.	LordPE - http://www.woodmann.com/collaborative/tools/index.php/LordPE 
+8.	Import Reconstructor - https://tuts4you.com/download.php?view.415 
+
+9.	OllyDbg 2.0 - http://www.ollydbg.de/download.htm 
+  a.	Lots of plugins but we will cover that later
+  b.	Future: Windbg
+
+10.	PE viewer
+  a.	CFF Explorer
+  b.	PE Exploter
+  c.	PE View
+  d.	PE studio
+  e.	Malware Analysis Cookbook scripts
+
+11.	Other (personal preference): 
+  a.	Cygwin – with gcc, xxd, python https://cygwin.com/install.html 
+  b.	Notepad++ - http://notepad-plus-plus.org/ 
+  c.	IDA Pro (free 5.X)
+
+12. Volatility
+13.	Visual Studio Express
+14.	WinDbg Debugger
+15.	Volatility
+16.	Process Hacker
