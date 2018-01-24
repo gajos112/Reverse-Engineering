@@ -1,0 +1,44 @@
+1. Operating Systems:
+- Windows XP 32-bit (SP2 if possible and SP3)
+- Windows XP (Chinese 32-bit SP2 if possible and SP3)
+- Windows 7 32-bit (SP1, not fully patched and fully patched)
+- Windows 7 32-bit (Chinese SP1, not fully patched and fully patched)
+- Windows 7 64-bit (Just SP1, not fully patched and fully patched)
+- Windows 7 64-bit (Chinese Just SP1, not fully patched and fully patched)
+
+Auto updates off and time updates off.
+
+2. Internet Explorer:
+- IE8, 9, 10. (Unpatched and fully patched on each version).
+
+3. Office:
+- 2003 (Unpatched and fully patched)
+- 2007 (Unpatched and fully patched)
+- 2010 (Unpatched and fully patched)
+- Macro setting, low
+
+4. Flash:
+- Flash 10, 11 (Unpatched and fully patched)
+
+5. Adobe Acrobat Reader:
+- 9 (Unpatched, fully patched)
+- 10 (Unpatched, fully patched)
+- 11 (Unpatched, fully patched)
+
+6. Java:
+-JRE6 (Unpatched, fully patched)
+-JRE7 (Unpatched, fully patched)
+
+
+7. Make sure plugins are IE ActiveX no prompts to run things.
+disable shadow volume & copy and defrag on XP
+Run everything at least once
+Settings changed:
+-Auto login
+-Turned off, 'Hide extensions for known types'
+-Turned off, 'Hide protected operating system files'
+-Removed the, 'These files are hidden' banners.
+-turned off firewall
+-disabled IE privacy stuff
+-turned off all the visual effects
+-snapshot after reboot
