@@ -8,3 +8,6 @@ Advantages of packers:
 - No strings,
 - Fewer AV detection
 - Different PE sections
+
+Tool to detect the packer:
+- PEID
