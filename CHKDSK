@@ -1,0 +1,34 @@
+CHKDSK (short for "check disk") is a system tool in DOS, OS/2 and Windows. It verifies the file system integrity of a volume 
+and fixes logical file system errors. It is similar to the fsck command in Unix.
+
+On Windows NT operating systems, CHKDSK can also check the disk surface for bad sectors and mark them 
+(in MS-DOS 6.x and Windows 9x, this is a task done by Microsoft ScanDisk). The Windows Server version of CHKDSK is RAID-aware 
+and can fully recover data in bad sectors of a disk in a RAID-1 or RAID-5 array if other disks in the set are intact.
+
+Usefull to find the serial number of diver.
+
+CHKDSK [volume[[path]filename]]] [/F] [/V] [/R] [/X] [/I] [/C] [/L[:size]]
+
+  volume          Specifies the drive letter (followed by a colon),
+                  mount point, or volume name.
+  filename        FAT/FAT32 only: Specifies the files to check for fragmen
+.
+  /F              Fixes errors on the disk.
+  /V              On FAT/FAT32: Displays the full path and name of every f
+                  on the disk.
+                  On NTFS: Displays cleanup messages if any.
+  /R              Locates bad sectors and recovers readable information
+                  (implies /F).
+  /L:size         NTFS only:  Changes the log file size to the specified n
+                  of kilobytes.  If size is not specified, displays curren
+                  size.
+  /X              Forces the volume to dismount first if necessary.
+                  All opened handles to the volume would then be invalid
+                  (implies /F).
+  /I              NTFS only: Performs a less vigorous check of index entri
+  /C              NTFS only: Skips checking of cycles within the folder
+                  structure.
+  /B              NTFS only: Re-evaluates bad clusters on the volume
+                  (implies /R)
+
+The /I or /C switch reduces the amount of time required to run Chkdsk by
