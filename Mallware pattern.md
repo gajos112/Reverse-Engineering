@@ -1,4 +1,4 @@
-#Malicious Activity API Pattern#
+#Malicious Activity API Pattern
 
 - Key Logger(FindWindowA, ShowWindow, GetAsyncKeyState) (SetWindowsHookEx, RegisterHotKey, GetMessage,UnhookWindowsHookEx)
 
