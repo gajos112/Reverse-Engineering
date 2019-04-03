@@ -69,3 +69,5 @@ CreateProcessInternalW
 NtWriteVirtualMemory
 
 NtResumeThread
+
+CreateProcessA
