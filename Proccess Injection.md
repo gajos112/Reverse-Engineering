@@ -72,5 +72,5 @@ NtResumeThread
 
 CreateProcessA
 
-CreateProcessA
+OpenProcess
 
