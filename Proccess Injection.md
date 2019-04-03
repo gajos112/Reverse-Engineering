@@ -61,7 +61,11 @@ BOOL WriteProcessMemory(
 
 # Hooks
 VirtualAlloc
+
 WriteProcessMemory
+
 CreateProcessInternalW
+
 NtWriteVirtualMemory
+
 NtResumeThread
