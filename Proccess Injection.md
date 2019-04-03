@@ -74,3 +74,7 @@ CreateProcessA
 
 OpenProcess
 
+regsetvalueA
+
+regsetvaluew
+
