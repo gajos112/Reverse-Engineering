@@ -71,3 +71,6 @@ NtWriteVirtualMemory
 NtResumeThread
 
 CreateProcessA
+
+CreateProcessA
+
