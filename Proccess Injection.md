@@ -58,3 +58,10 @@ BOOL WriteProcessMemory(
 - nSize - The number of bytes to be written to the specified process.
 
 - lpNumberOfBytesWritten - A pointer to a variable that receives the number of bytes transferred into the specified process. This parameter is optional. If lpNumberOfBytesWritten is NULL, the parameter is ignored.
+
+# Hooks
+VirtualAlloc
+WriteProcessMemory
+CreateProcessInternalW
+NtWriteVirtualMemory
+NtResumeThread
