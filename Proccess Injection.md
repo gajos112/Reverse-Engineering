@@ -3,20 +3,35 @@
 CreateProcess(NULL, commandLine, NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &startupinfo, &processinfo)
  
 // a function that will replace CreateProcessInternalW
+
 // gets called whenever a process creates a child process
+
 DWORD WINAPI CreateProcessInternalGuarded(
+
   __in         DWORD unknown1,                              // always (?) NULL
+  
   __in_opt     LPCTSTR lpApplicationName,
+  
   __inout_opt  LPTSTR lpCommandLine,
+  
   __in_opt     LPSECURITY_ATTRIBUTES lpProcessAttributes,
+  
   __in_opt     LPSECURITY_ATTRIBUTES lpThreadAttributes,
+  
   __in         BOOL bInheritHandles,
+  
   __in         DWORD dwCreationFlags,
+  
   __in_opt     LPVOID lpEnvironment,
+  
   __in_opt     LPCTSTR lpCurrentDirectory,
+  
   __in         LPSTARTUPINFO lpStartupInfo,
+  
   __out        LPPROCESS_INFORMATION lpProcessInformation,
+  
 __in DWORD unknown2 // always (?) NULL
+
 
 - https://www.geoffchappell.com/studies/windows/win32/index.htm?tx=22
 
