@@ -45,7 +45,5 @@ BOOL VirtualProtect(
 
 
 
-- PAGE_EXECUTE_READWRITE
-0x40
-Enables execute, read-only, or read/write access to the committed region of pages.
+**PAGE_EXECUTE_READWRITE** - 0x40 - Enables execute, read-only, or read/write access to the committed region of pages.
 Windows Server 2003 and Windows XP: This attribute is not supported by the CreateFileMapping function until Windows XP with SP2 and Windows Server 2003 with SP1.
