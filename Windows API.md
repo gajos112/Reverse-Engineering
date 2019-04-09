@@ -1,6 +1,6 @@
 # Packers
--CryptDecrypt
--RtlDecompressBuffer
+- CryptDecrypt
+- RtlDecompressBuffer
 
 # Input/output Create:
 - CreatefileA
