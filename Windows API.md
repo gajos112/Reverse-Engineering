@@ -1,3 +1,7 @@
+# Packers
+-CryptDecrypt
+-RtlDecompressBuffer
+
 # Input/output Create:
 - CreatefileA
 - CreatePipe
