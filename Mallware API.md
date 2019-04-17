@@ -29,7 +29,7 @@ If the dll is imported dynamically,walking through the imports will not give you
 
 # Changes the protection on a memory region
 
-VirtualProtect - Changes the protection on a region of committed pages in the virtual address space of the calling process.
+**VirtualProtect** - Changes the protection on a region of committed pages in the virtual address space of the calling process.
 
 BOOL VirtualProtect(
 
