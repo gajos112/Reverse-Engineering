@@ -75,13 +75,13 @@ Windows Server 2003 and Windows XP: This attribute is not supported by the Creat
 - **CreateToolhelp32Snapshot** 	Flags: TH32CS_SNAPPROCESS ProcessId: 0
 Takes a snapshot of the specified processes, as well as the heaps, modules, and threads used by these processes. If the function succeeds, it returns an open handle to the specified snapshot.
 
-- **Process32FirstW** 	ProcessName: [System Process] ProcessId: 0 	success 	0x00000001 	
+- **Process32FirstW** 	ProcessName: [System Process] ProcessId: 0
 
-- **Process32NextW** 	ProcessName: System ProcessId: 4 	success 	0x00000001
+- **Process32NextW** 	ProcessName: System ProcessId: 4
 
-- **Process32NextW** 	ProcessName: explorer.exe ProcessId: 1632 success 	0x00000001
+- **Process32NextW** 	ProcessName: explorer.exe ProcessId: 1632
 
-- **NtOpenProcess** 	ProcessHandle: 0x00000174 ProcessIdentifier: 1632	success 	0x00000000
+- **NtOpenProcess** 	ProcessHandle: 0x00000174 ProcessIdentifier: 1632
 
 - **NtAllocateVirtualMemory**	Protection: PAGE_EXECUTE_REDWRITE	ProcessHandle: 0x0000174	RegionSize: 0x00026000	BaseAddress: 0x02b0000
 
