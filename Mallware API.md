@@ -68,12 +68,14 @@ Takes a snapshot of the specified processes, as well as the heaps, modules, and 
 
 # APIs
 
+**Creation**
 - CreateFileA
 - DeleteFileA
 - WriteFile
 - fopen
 - fwrite
 
+**Internet**
 - InternetConnectA
 - InternetOpenA
 - InternetReadFile
@@ -83,11 +85,13 @@ Takes a snapshot of the specified processes, as well as the heaps, modules, and 
 - WSACleanup
 - WSAStartup
 
+**Registry**
 - RegCreateKey
 - RegDeleteKeyA
 - RegDeleteValueA
 - RegSetValueExA
 
+**Looking for process**
 - CreateToolhelp32Snapshot
 - Process32FirstW
 - Process32NextW
