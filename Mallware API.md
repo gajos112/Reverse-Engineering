@@ -81,6 +81,8 @@ Takes a snapshot of the specified processes, as well as the heaps, modules, and 
 
 - **Process32NextW** 	ProcessName: explorer.exe ProcessId: 1632 success 	0x00000001
 
-- **NtOpenProcess** 	ProcessHandle: 0x00000174 ProcessIdentifier: 1632
-DesiredAccess: PROCESS_CREATE_THREAD|PROCESS_VM_OPERATION|PROCESS_VM_READ|PROCESS_VM_WRITE|PROCESS_QUERY_INFORMATION
-	success 	0x00000000
+- **NtOpenProcess** 	ProcessHandle: 0x00000174 ProcessIdentifier: 1632	success 	0x00000000
+
+- **NtAllocateVirtualMemory**	Protection: PAGE_EXECUTE_REDWRITE	ProcessHandle: 0x0000174	RegionSize: 0x00026000	BaseAddress: 0x02b0000
+
+- **WriteProcessMemory**	ProcessHandle: 0x0000174	BaseAddress: 0x02b0000
