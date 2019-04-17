@@ -98,3 +98,9 @@ Takes a snapshot of the specified processes, as well as the heaps, modules, and 
 - NtOpenProcess
 - NtAllocateVirtualMemory
 - WriteProcessMemory
+
+**DLL load**
+- kernel32 LoadLibraryA
+- kernel32 LoadLibraryW
+- ntdll.dll LdrLoadDll
+- GetProcAddress
