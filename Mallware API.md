@@ -104,3 +104,7 @@ Takes a snapshot of the specified processes, as well as the heaps, modules, and 
 - kernel32 LoadLibraryW
 - ntdll.dll LdrLoadDll
 - GetProcAddress
+
+# tedt
+
+http://a-twisted-world.blogspot.com/2008/03/createprocessinternal-function.html
