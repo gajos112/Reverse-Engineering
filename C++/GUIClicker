@@ -3,27 +3,34 @@
 #include <cstdlib>
 #include <cstdio>
 #include <sstream>
+#include <thread>
+# define START 2
+# define STOP 3
+
 using namespace std;
 bool clicking;
-int xf1, xf2;
-int yf1, yf2;
+int xf1, xf2, xf3, xf4;
+int yf1, yf2, yf3, yf4;
+int aktualnyX, aktualnyY;
 
+BOOLEAN wspolrzedna=false;
+BOOLEAN run=true;
+BOOLEAN F1 = false, F2 = false, F3 = false, F4 = false;
 LRESULT CALLBACK WindowsProcedure(HWND, UINT, WPARAM, LPARAM);
 
+void zacznij_klikanie();
 void addMenus(HWND);
 void addControls(HWND);
+void aktualnaPozycjaKursora();
+
+
 HMENU hMenu;
 HWND hEdit;
-HWND hStatic;
-
+HWND hStatic1, hStatic2, hStatic3, hStatic4, hStatic5, hStatic6;
 
 using namespace std;
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdshow){
- //Stealth();
- //MessageBox(NULL, "HELLO", "My first GUI", MB_OK);
-
-//hInst - instancja aplikacji (ID nadawane przez system)
 
  WNDCLASSW wc = {0};
  wc.hbrBackground = (HBRUSH)COLOR_WINDOW;
@@ -35,9 +42,12 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
  if (!RegisterClassW(&wc))
     return -1;
 
- CreateWindowW(L"myWindowClass", L"Clicker", WS_OVERLAPPEDWINDOW | WS_VISIBLE, 100, 100, 500, 500, NULL, NULL, NULL, NULL);
+ CreateWindowW(L"myWindowClass", L"SOC - Autoclicker", WS_OVERLAPPEDWINDOW | WS_VISIBLE, 100, 100, 300, 370, NULL, NULL, NULL, NULL);
 
  MSG msg = {0};
+
+                     std::thread t2(aktualnaPozycjaKursora);
+                    t2.detach();
 
  while(GetMessage((&msg), NULL, NULL, NULL ))
  {
@@ -62,45 +72,122 @@ LRESULT CALLBACK WindowsProcedure(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp){
                 MessageBeep(MB_OK);
                 MessageBox(NULL, "Clicker created by Krzysztof Gajewski", "Clicker v0.1", MB_OK);
                 break;
+
+            case 2:
+                {
+                    run=true;
+                    std::thread t1(zacznij_klikanie);
+                    t1.detach();
+                    break;
+                }
+
+            case 3:
+                {
+                    run=false;
+                    SetWindowText(hStatic5,"Nie klikam...");
+                    break;
+                }
             }
         break;
-
+                    SetWindowText(hStatic5,"Klikam");
         case WM_KEYDOWN:
         {
             switch (wp)
             {
                 case VK_F1:
                 {
-                    MessageBox(NULL, "Wcisnoles F1", "My first GUI", MB_OK);
                     Sleep(100);
                     POINT cursorPos;
                     GetCursorPos(&cursorPos);
-                    //x = 0;
+
                     xf1 = cursorPos.x;
-                    //y = 0;1
                     yf1 = cursorPos.y;
 
+                    wspolrzedna = true;
 
                     char *str = "Wspolrzedna X wynosi: ";
+                    stringstream ss;
+                    ss << "X: " << xf1 << " Y: " << yf1;
+                    string s = ss.str();
 
+                    char cstr[s.size() + 1];
+                    strcpy(cstr, s.c_str());
 
-stringstream ss;
-ss << "Wspolrzedna X wynosi: " << xf1 << "Wspolrzedna Y wynosi: " << yf1;
-string s = ss.str();
+                    SetWindowText(hStatic1,cstr);
+                    F1 = true;
 
-	char cstr[s.size() + 1];
-	strcpy(cstr, s.c_str());
-
-                    MessageBox(NULL,cstr , "My first GUI", MB_OK);
-
-                    SetWindowTextW(hEdit,L"TEST");
-                    SetWindowTextW(hStatic,L"TEST");
-                                   }
+                }
                 break;
 
                 case VK_F2:
                 {
-                    MessageBox(NULL, "Wcisnoles F2", "My first GUI", MB_OK);
+                    Sleep(100);
+                    POINT cursorPos;
+                    GetCursorPos(&cursorPos);
+
+                    xf2 = cursorPos.x;
+                    yf2 = cursorPos.y;
+
+                    wspolrzedna = true;
+
+                    char *str = "Wspolrzedna X wynosi: ";
+                    stringstream ss;
+                    ss << "X: " << xf2 << " Y: " << yf2;
+                    string s = ss.str();
+
+                    char cstr[s.size() + 1];
+                    strcpy(cstr, s.c_str());
+
+                    SetWindowText(hStatic2,cstr);
+                    F2 = true;
+                }
+                break;
+
+                case VK_F3:
+                {
+                    Sleep(100);
+                    POINT cursorPos;
+                    GetCursorPos(&cursorPos);
+
+                    xf3 = cursorPos.x;
+                    yf3 = cursorPos.y;
+
+                    wspolrzedna = true;
+
+                    char *str = "Wspolrzedna X wynosi: ";
+                    stringstream ss;
+                    ss << "X: " << xf3 << " Y: " << yf3;
+                    string s = ss.str();
+
+                    char cstr[s.size() + 1];
+                    strcpy(cstr, s.c_str());
+
+                    SetWindowText(hStatic3,cstr);
+                    F3 = true;
+                }
+                break;
+
+                case VK_F4:
+                {
+                    Sleep(100);
+                    POINT cursorPos;
+                    GetCursorPos(&cursorPos);
+
+                    xf4 = cursorPos.x;
+                    yf4 = cursorPos.y;
+
+                    wspolrzedna = true;
+
+                    char *str = "Wspolrzedna X wynosi: ";
+                    stringstream ss;
+                    ss << "X: " << xf4 << " Y: " << yf4;
+                    string s = ss.str();
+
+                    char cstr[s.size() + 1];
+                    strcpy(cstr, s.c_str());
+
+                    SetWindowText(hStatic4,cstr);
+                    F4 = true;
                 }
                 break;
             }
@@ -128,9 +215,89 @@ void addMenus(HWND hWnd)
 
 void addControls(HWND hWnd)
 {
-    hStatic = CreateWindowW(L"Static",L"Pierwszy punkt: ", WS_VISIBLE | WS_CHILD | SS_CENTER, 150,100,200,50,hWnd,NULL,NULL,NULL);
-   hEdit = CreateWindowW(L"Edit",L"", WS_VISIBLE | WS_CHILD | SS_CENTER, 150,150,200,50,hWnd,NULL,NULL,NULL);
+    CreateWindowW(L"Static",L"SOC - Autoclicker v1.0", WS_VISIBLE | WS_CHILD | SS_CENTER, 0,15,300,25,hWnd,NULL,NULL,NULL);
+    CreateWindowW(L"Static",L"created by Krzysztof Gajewski", WS_VISIBLE | WS_CHILD | SS_CENTER, 0,30,300,25,hWnd,NULL,NULL,NULL);
+
+    CreateWindowW(L"Static",L"Pierwszy punkt: ", WS_VISIBLE | WS_CHILD | SS_LEFT, 15,80,200,25,hWnd,NULL,NULL,NULL);
+    hStatic1 = CreateWindowW(L"Static",L"BRAK", WS_VISIBLE | WS_CHILD | SS_LEFT, 160,80,200,25,hWnd,NULL,NULL,NULL);
+
+    CreateWindowW(L"Static",L"Drugi punkt: ", WS_VISIBLE | WS_CHILD | SS_LEFT, 15,105,200,25,hWnd,NULL,NULL,NULL);
+    hStatic2 = CreateWindowW(L"Static",L"BRAK", WS_VISIBLE | WS_CHILD | SS_LEFT, 160,105,200,25,hWnd,NULL,NULL,NULL);
+
+    CreateWindowW(L"Static",L"Trzeci punkt: ", WS_VISIBLE | WS_CHILD | SS_LEFT, 15,130,200,25,hWnd,NULL,NULL,NULL);
+    hStatic3 = CreateWindowW(L"Static",L"BRAK", WS_VISIBLE | WS_CHILD | SS_LEFT, 160,130,200,25,hWnd,NULL,NULL,NULL);
+
+    CreateWindowW(L"Static",L"Czwarty punkt: ", WS_VISIBLE | WS_CHILD | SS_LEFT, 15,155,200,25,hWnd,NULL,NULL,NULL);
+    hStatic4 = CreateWindowW(L"Static",L"BRAK", WS_VISIBLE | WS_CHILD | SS_LEFT, 160,155,200,25,hWnd,NULL,NULL,NULL);
+
+    CreateWindowW(L"Button",L"START", WS_VISIBLE | WS_CHILD | SS_CENTER, 25,200,100,25,hWnd,(HMENU)2,NULL,NULL);
+    CreateWindowW(L"Button",L"STOP", WS_VISIBLE | WS_CHILD | SS_CENTER, 150,200,100,25,hWnd,(HMENU)3,NULL,NULL);
+
+    hStatic5 = CreateWindowW(L"Static",L"Aktualnie nie klikam...", WS_VISIBLE | WS_CHILD | SS_CENTER, 0,240,300,25,hWnd,NULL,NULL,NULL);
+    hStatic6 = CreateWindowW(L"Static",L"Aktualna pozycja kursora", WS_VISIBLE | WS_CHILD | SS_CENTER, 0,285,300,25,hWnd,NULL,NULL,NULL);
+
+   //hEdit = CreateWindowW(L"Edit",L"", WS_VISIBLE | WS_CHILD | SS_CENTER, 150,150,200,50,hWnd,NULL,NULL,NULL);
 
 }
 
+void zacznij_klikanie()
+{
+     if(F1 | F2 | F3 | F4){
+            while (run)
+                {
 
+                    SetWindowText(hStatic5,"Klikam");
+                    Sleep(5000);
+                    if (F1)
+                    {
+                        SetCursorPos(xf1, yf1);
+                        mouse_event(MOUSEEVENTF_LEFTDOWN, xf1, yf1, 0, 0);
+                        mouse_event(MOUSEEVENTF_LEFTUP, xf1, yf1, 0, 0);
+                    }
+                    if (F2)
+                    {
+                        SetCursorPos(xf2, yf2);
+                        mouse_event(MOUSEEVENTF_LEFTDOWN, xf2, yf2, 0, 0);
+                        mouse_event(MOUSEEVENTF_LEFTUP, xf2, yf2, 0, 0);
+                    }
+                    if (F3)
+                    {
+                        SetCursorPos(xf3, yf3);
+                        mouse_event(MOUSEEVENTF_LEFTDOWN, xf3, yf3, 0, 0);
+                        mouse_event(MOUSEEVENTF_LEFTUP, xf3, yf3, 0, 0);
+                    }
+                    if (F4)
+                    {
+                        SetCursorPos(xf4, yf4);
+                        mouse_event(MOUSEEVENTF_LEFTDOWN, xf4, yf4, 0, 0);
+                        mouse_event(MOUSEEVENTF_LEFTUP, xf4, yf4, 0, 0);
+                    }
+                    }
+                }
+                    else  MessageBox(NULL, "Nie podales wspolrzendych", "Error", MB_OK);
+
+
+
+}
+
+void aktualnaPozycjaKursora(){
+
+    while (true){
+        Sleep(25);
+        POINT cursorPos;
+        GetCursorPos(&cursorPos);
+
+        aktualnyX = cursorPos.x;
+        aktualnyY = cursorPos.y;
+
+        stringstream ss;
+        ss << "X: " << aktualnyX << " Y: " << aktualnyY;
+        string s = ss.str();
+
+        char cstr[s.size() + 1];
+        strcpy(cstr, s.c_str());
+
+
+        SetWindowText(hStatic6,cstr);
+}
+}
