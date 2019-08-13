@@ -1,0 +1,34 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+#pragma pack(push,1)
+struct Person {
+    char name[4];
+   int name2;
+};
+#pragma pack(pop)
+
+int main()
+{
+    Person someone = {};
+    string fileName = "At2.job";
+
+    ifstream inputFile;
+    inputFile.open(fileName, ios::binary);
+
+    if (inputFile.is_open())
+    {
+
+        inputFile.read(reinterpret_cast<char *>(&someone), sizeof(Person));
+        inputFile.close();
+    }
+    else {
+        cout << "Could not read file" + fileName;
+    }
+
+ //   for( int indeks = 0; indeks < 12; indeks++ )
+      // cout << hex << someone.name;
+
+    return 0;
+}
