@@ -1,0 +1,6 @@
+iptables -t NAT -A PREROUTING -i eth0 -j REDIRECT
+iptables -t NAT -D PREROUTING -i eth0 -j REDIRECT
+
+On REMNUX:
+accept-all-ips start
+accept-all-ips stop
