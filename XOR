@@ -1,0 +1,5 @@
+Put decoded code to file.
+
+xdd -r -p encoded.txt > encoded.raw
+
+translate.py encoded.raw decoded.txt 'byte ^ x0a'
